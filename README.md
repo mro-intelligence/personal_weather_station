@@ -86,3 +86,7 @@ Press Ctrl+C to stop.
 - Check that your RTL-SDR device is detected: `rtl_test`
 - Verify your Weather Underground credentials are correct
 - Monitor stderr output for detailed logging
+
+## Attribution
+
+- Built with help from Claude
