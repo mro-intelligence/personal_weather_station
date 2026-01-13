@@ -1,0 +1,25 @@
+{
+    "name": "WH24B",
+    "description": "WH24B Weather Station Configuration",
+    "rtl_sdr": {
+        "decoder_id": "78", 
+        "frequency": "915M",
+        "additional_args": []
+    },
+    "wunderground": {
+        "station_id": "YOUR_STATION_ID",
+        "station_key": "YOUR_STATION_KEY",
+        "translations": [
+            {"rtl_field": "temperature_C", "field": "tempf", "conversion": "c_to_f"},
+            {"rtl_field": "humidity", "field": "humidity"},
+            {"rtl_field": "wind_avg_m_s", "field": "windspeedmph", "conversion": "ms_to_mph"},
+            {"rtl_field": "wind_max_m_s", "field": "windgustmph", "conversion": "ms_to_mph"},
+            {"rtl_field": "wind_dir_deg", "field": "winddir"},
+            {"rtl_field": "rain_mm", "field": "rainin", "conversion": "delta_hour_mm_to_in"},
+            {"rtl_field": "rain_mm", "field": "dailyrainin", "conversion": "delta_day_mm_to_in"},
+            {"rtl_field": "pressure_hPa", "field": "baromin", "conversion": "hpa_to_inhg"},
+            {"rtl_field": "uvi", "field": "UV"},
+            {"rtl_field": "light_lux", "field": "solarradiation"}
+        ]
+    }
+}
