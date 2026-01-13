@@ -1,6 +1,7 @@
 # WH24B Weather Station Data Collector
 
-This tool collects weather data from an weather station using rtl_433 and uploads it to Weather Underground Personal Weather Station (PWS).
+This tool collects data from a personal weather station and uploads it to Weather Underground.
+It currently works with the WH24B weather station but could be configured to support other weather stations.
 
 ## Requirements
 
@@ -21,8 +22,8 @@ pip install requests
 # Ubuntu/Debian
 sudo apt-get install rtl-433
 
-# macOS with Homebrew
-brew install rtl_433
+# macOS with MacPorts
+sudo port install rtl_433
 ```
 
 ## Configuration
@@ -30,6 +31,8 @@ brew install rtl_433
 Copy `config-sample.json` to `config.json` and edit with your settings:
 
 - `rtl_sdr.decoder_id`: RTL_433 decoder ID for your weather station
+    - modify this if you have a different weather station from the WH24B
+    - use `rtl_433 -v -R` to list possible decoder IDs
 - `rtl_sdr.frequency`: Frequency to listen on (e.g., "915M")
 - `wunderground.station_id`: Your Weather Underground station ID
 - `wunderground.station_key`: Your Weather Underground station key
@@ -37,6 +40,7 @@ Copy `config-sample.json` to `config.json` and edit with your settings:
 
 ### Field Translations
 
+Modify these if you have a different weather station from the WH24B.
 The `translations` section maps rtl_433 JSON fields to Weather Underground fields with optional unit conversions:
 
 ```json
